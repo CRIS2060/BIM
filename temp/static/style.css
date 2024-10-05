@@ -1,0 +1,124 @@
+body {
+    background-image: url('/static/dog_pics/bg.jpg'); /* Adjust the path based on where the image is located */
+    background-size: cover; /* Make sure the background covers the entire page */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent the background from repeating */
+    min-height: 100vh; /* Ensure the background covers the full height of the viewport */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    position: sticky; /* Keeps the navbar on top */
+    top: 0;
+    z-index: 100;
+}
+
+/* Center the content below the navbar */
+.main-content {
+    padding-left: 30%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 60px); /* Takes into account the navbar height */
+    text-align: center;
+    font-size: 24px;
+}
+.main-content form {
+    font-size: 26px;
+}
+
+/* Center navbar content */
+.navbar .navbar-brand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 30px; 
+}
+
+
+/* Center the form elements */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+.results-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.result-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+    cursor: pointer;
+    width: 30%; /* Set a fixed width for cards */
+}
+
+.result-card img {
+    width: 100%; /* Ensure the image scales to the card width */
+    height: 300px; /* Fixed height for all images */
+    object-fit: cover; /* Crop the image to fit the dimensions */
+    border-radius: 5px; /* Rounded corners for the image */
+}
+
+.result-card h2 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.result-card p {
+    font-size: 14px;
+    color: #666;
+}
+.center{
+    text-align: center;
+}
+form {
+    display: flex; /* Use flexbox for better alignment */
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center items */
+    margin: 20px; /* Add margin for spacing */
+}
+
+label {
+    font-size: 18px; /* Make the label larger */
+    margin-bottom: 10px; /* Space between label and input */
+}
+
+input[type="text"] {
+    width: 300px; /* Set width of the text box */
+    padding: 10px; /* Add padding inside the text box */
+    border: 2px solid #ccc; /* Border color */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size for input text */
+    transition: border-color 0.3s; /* Smooth transition for focus effect */
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF; /* Change border color on focus */
+    outline: none; /* Remove outline */
+}
+
+button {
+    padding: 10px 15px; /* Add padding for button */
+    border: none; /* Remove default border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #65342b; /* Button background color */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Change cursor to pointer */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: rgb(211, 158, 0); /* Darker blue on hover */
+}

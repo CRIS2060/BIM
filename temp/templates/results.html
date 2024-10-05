@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <title>Dog Breeds Results</title>
+    <style>
+        body{
+            background-color: #fbe4c0;
+        }
+        .navbar {
+           
+            top: 0;
+            z-index: 100;
+        }
+        .navbar .navbar-brand {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            font-size: 30px; 
+        }
+        .results-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            
+        }
+        .result-card {
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            cursor: pointer;
+            width: 30%; /* Set a fixed width for cards */
+            background-color: aliceblue;
+        }
+        .result-card img {
+            width: 100%; /* Ensure the image scales to the card width */
+            height: 300px; /* Fixed height for all images */
+            object-fit: cover; /* Crop the image to fit the dimensions */
+            border-radius: 5px; /* Rounded corners for the image */
+
+        }
+        .result-card h2 {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .result-card p {
+            font-size: 14px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="navbar-brand" href="#">
+                <!-- Paw print image in the navbar -->
+                <img src="{{ url_for('static', filename='dog_pics/pawprint.png') }}" alt="Paw Print Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+                <h2 style="display: inline;">CANINE</h2> <!-- Logo beside the text -->
+            </div>
+        </div>
+    </nav>
+    <center><h1>Search Results : </h1></center> <!-- Display the search term -->
+    <div class="results-container">
+        {% for result in results %}
+        <div class="result-card">
+            <img src="{{ result.photo_url }}" alt="{{ result.title }} Image">
+            <h2>{{ result.title }}</h2>
+            <p>Relevance Score: {{ result.score }}</p> <!-- Display relevance score -->
+
+            <!-- Display document text -->
+            <div>
+                <p>{{ result.document_text }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+</html>

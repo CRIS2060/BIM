@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Breed Search</title>
+    
+    <!-- Favicon for the browser tab -->
+    <link rel="icon" href="{{ url_for('static', filename='dog_pics/pawprint.png') }}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    
+</head>
+<body>
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+            <div class="navbar-brand" >
+                <!-- Paw print image in the navbar -->
+                <img src="/static/dog_pics/pawprint.png" alt="Paw Print Logo" style="width: 40px; height: 40px; margin-right: 10px;">
+                <h1 style="display: inline;">CANINE</h1> <!-- Logo beside the text -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-content">
+        <h1>Search for Dog Breeds</h1>
+        <form action="/search" method="POST">
+            <label for="query">Enter a dog breed or keyword:</label>
+            <input type="text" id="query" name="query" required>
+            <button type="submit">Search</button>
+        </form>
+    </div>
+</body>
+</html>
